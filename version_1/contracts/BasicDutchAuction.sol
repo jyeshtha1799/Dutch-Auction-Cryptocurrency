@@ -1,6 +1,5 @@
 // // SPDX-License-Identifier: MIT
-// // Author: Raj Mehta
-// // Version : 1.0
+
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -9,12 +8,12 @@ import "hardhat/console.sol";
 contract BasicDutchAuction {
     uint256 public blocknumber;
     uint256 public offerprice = 0 ether;
-    uint256 public initialPrice = 5 ether;
+    uint256 public initialPrice = 1 ether;
     uint256 public immutable startAt;
     uint256 public immutable endsAt;
     uint256 public immutable reservePrice = 1.5 ether;
     uint256 public immutable offerPriceDecrement = 0.01 ether;
-    uint256 public immutable numBlocksAuctionOpen = 10;
+    uint256 public immutable numBlocksAuctionOpen = 30;
     address public donor;
     uint256 public finalPrice;
     address public immutable owner;

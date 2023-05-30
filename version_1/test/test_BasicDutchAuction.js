@@ -28,8 +28,8 @@ const {
         expect(await basicdutchauction.blocknumber()).to.equal(1);
       });
   
-      it("Check if the initialPrice is 1600000000000000000 wei", async function () {
-        var bigNum = BigInt("1600000000000000000");
+      it("Check if the initialPrice is 1800000000000000000 wei", async function () {
+        var bigNum = BigInt("1800000000000000000");
         const { basicdutchauction, owner } = await loadFixture(BasicDutchAuctiondeploy);
         expect(await basicdutchauction.initialPrice()).to.equal(bigNum);
       });
@@ -55,13 +55,13 @@ const {
     
   
       it("Rejects lower bid", async function () {
-        var bigNum = BigInt("1400000000000000000");
+        var bigNum = BigInt("100000000000000");
         const { basicdutchauction, owner } = await loadFixture(BasicDutchAuctiondeploy);
         await expect(basicdutchauction.receiveMoney({ value: bigNum })).to.be.revertedWith('Not enough ether sent.');
       });
   
       it("Rejects second bid ", async function () {
-        var bigNum = BigInt("1600000000000000000");
+        var bigNum = BigInt("16000000000000000000");
         const { basicdutchauction, owner } = await loadFixture(BasicDutchAuctiondeploy);
         await expect(basicdutchauction.receiveMoney({ value: bigNum })).eventually.to.ok;
         await expect(basicdutchauction.receiveMoney({ value: bigNum })).to.be.revertedWith('Someone has already donated');
