@@ -1,13 +1,20 @@
-# Sample Hardhat Project
+# Dutch Auction V1
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## How to run
 
-Try running some of the following tasks:
-
+This is how to deploy the Smart Contract:
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+This is how to run the test cases:
+```shell
+REPORT_GAS=true npx hardhat test
+```
+
+This is how to get coverage
+```shell
+npx hardhat coverage
+```
+
+Now go to the "coverage" folder and select index.html, click on Live Server on bottom right of VSCode and it will start Coverage on Safari.
